@@ -1,3 +1,11 @@
+
+
+## Augmented Lagrangian methods
+
+- proble
+
+([Wikipedia](https://en.wikipedia.org/wiki/Augmented_Lagrangian_method))
+
 ## Calculus of variation
 
 - problem to ﬁnd a value of $x$ that maximizes (or minimizes) a function $y(x)$

@@ -94,3 +94,42 @@ Straightforward extension of  the technique of Lagrange multipliers to the case 
 
 Straightforward extension to constrained **functional derivatives**.
 
+
+
+
+
+## Lagrange multipliers and numerical optimization
+
+([Wikipedia](https://en.wikipedia.org/wiki/Lagrange_multipliers))
+
+
+
+critical points of Lagrangians occur at saddle points rather than at local maxima (or minima)
+
+unfortunately, many numerical optimization techniques  (e.g. gradient descent) are designed to find local maxima (or minima) and not  saddle points
+
+- either modify the formulation  to ensure that it's a minimization problem (for example, by extremizing  the square of the gradient; cf. below) [gradient](https://en.wikipedia.org/wiki/Gradient) of the Lagrangian as below)
+- or else use an optimization technique that finds stationary points and not necessarily extrema.
+
+
+
+Simple example: want to find the value of $x$ that minimizes $f(x) = x²$  with the constraint $x²=1$
+
+-> converted to an unconstrained optimization problem with Lagrange multipliers: $L(x, \lambda) = x²+\lambda(x²-1)$
+
+The two critical points occur at saddle points where $x = 1$ and $x = −1$.
+
+To solve this with a numerical optimization  technique: transform this problem such that the critical  points occur at local minima
+
+-  done by computing the **magnitude of the gradient** of the unconstrained optimization problem
+  - compute the partial derivative of the unconstrained problem with respect to each variable
+  - if the target function is not easily differentiable, the differential with respect to each variable can be approximated 
+  - compute the magnitude of the gradient, which is the square root of the sum of the squares of the partial derivatives
+
+
+
+Since magnitude is always non-negative, optimizing over the  squared-magnitude is equivalent to optimizing over the magnitude. Thus,  the ''square root" may be omitted from these equations with no expected  difference in the results of optimization.
+
+The critical points of *h* occur at *x* = 1 and *x* = −1, just as in $L$
+
+Unlike the critical points in $L$ however, the critical points in *h* occur at local minima, so numerical optimization techniques can be used to find them.
