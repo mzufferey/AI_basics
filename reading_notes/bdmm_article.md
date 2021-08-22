@@ -101,8 +101,7 @@ $$
 
 #### Gradient descent does not work with Lagrange multipliers
 
-- energies  involving  Lagrange  multipliers,  however,  have  critical  points  which  tend  to  be  saddle 
-  points
+- energies  involving  Lagrange  multipliers,  however,  have  critical  points  which  tend  to  be  saddle points
 - gradient descent does not work  with  Lagrange multipliers,  because a critical point is an attractor not a local minimum ???
 
 #### BDMM

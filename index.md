@@ -6,6 +6,7 @@
   - D. Freeman [web chapter](https://www.shsu.edu/~eco_dgf/web_chapter_a.pdf) about optimization techniques, with appendix about Lagrange multipliers (really nice !)
   - Lagrange multipliers : [introduction](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/constrained-optimization/a/lagrange-multipliers-single-constraint) and [examples](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/constrained-optimization/a/lagrange-multipliers-examples) by the Khan academy (really really nice !)
   - back to the basics: [The gradient](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient) also by the Khan academy (really really nice !)
+  - [math tutorial](https://tutorial.math.lamar.edu/classes/calciii/lagrangemultipliers.aspx) about Lagrange multipliers (Paul's online notes)
   - [how we can make ML algorithms tunable (engraved blog)](https://www.engraved.blog/how-we-can-make-machine-learning-algorithms-tunable/): gradient descent vs. BDMM 
   - [why ML algorithms are hard to tune (engraved blog)](https://www.engraved.blog/why-machine-learning-algorithms-are-hard-to-tune): the issue when combining losses
   - [constrained optimization demystified (TDS)](https://towardsdatascience.com/constrained-optimization-demystified-with-implementation-in-python-235639546fa9) ([pdf](other_readings/constrained_optimization_demystified_tds.pdf))
