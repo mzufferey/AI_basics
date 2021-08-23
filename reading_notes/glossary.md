@@ -36,7 +36,7 @@
             - we really want λ to become exactly zero when the constraint is satisfied $\rightarrow$ parametrising it as a softplus or even an exponential to keep it positive, is a bad idea !
       - *upsides*: works well on convex case; both losses are considered at every gradient step $\rightarrow$ applicable with stochastic GD as well
       - *downside*: on concave Pareto case, it does not converge and keeps oscillating (bias of cherry-picking when to stop the optimization process !)
-    - <u>modified BDMM</u> (BDMM for constrained optimization algorithm from Platt and Barr 1987)
+    - <u>modified BDMM</u> (BDMM for constrained optimization algorithm from Platt and Barr 1988)
       - Lagrangian multiplier λ as the potential energy of an oscillating system; idea: introduce damping on this energy to prevent the system from oscillating eternally and make it converge
       - *upside*: works well on convex and concave Pareto front ! $\rightarrow$ **a tunable algorithm that works for stochastic GD**
       - *downside*: introduces an additional damping hyper-parameter, which:

@@ -6,7 +6,7 @@ for **optimizing a functional with respect to a probability distribution**, need
 
 - often most conveniently done using a **Lagrange multiplier**, which then **allows an unconstrained optimization** to be performed
 
-sometimes called undetermined multipliers
+sometimes called **undetermined multipliers**
 
 used to ﬁnd the stationary points of a function of several variables subject to one or more constraints
 

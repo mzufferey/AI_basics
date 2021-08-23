@@ -127,10 +127,20 @@ $$
 ### Modified  Differential  Method of Multipliers 
 
 - modification of the BDMM with  more robust convergence properties
+
 - for a given constrained optimization problem, it is  frequently necessary to **alter the BDMM to have  a region of positive damping surrounding the constrained minima**
+
 - the non-differential method of multipliers from  Numerical Analysis also has  this  difficulty
+
 - Numerical Analysis combines  the  multiplier  method with the penalty method  to yield  a  modified multiplier method that  is  locally convergent around constrained minima
-- the  BDMM is completely compatible  with  the  penalty  method.
+
+- the  BDMM is completely compatible  with  the  penalty  method
+
+- adds a penalty force corresponding to an quadratic energy
+  $$
+  E_{penalty} = \frac{c}{2}(g(x))^2
+  $$
+  
 
 
 

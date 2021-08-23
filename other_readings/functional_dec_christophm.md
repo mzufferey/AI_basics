@@ -112,10 +112,9 @@ $$
 f_S(x) = \int_{X_{-S}} \left( f(x)\right) d X_{-S}) - \int_{X_{-S}} \left(\sum_{V \subset S} \right) d X_{-S})
 $$
 
-
 **The first part is the integral over the prediction function, with  respect of the features that are not in the set. This the same as the expectation of the function when we integrate out  features $X_{-S}$, and pretending that all features follow a uniform  distribution.** The second part are all the lower dimensional components, so we apply  some kind of centering. For example if $S=\{1,2\}$, meaning we look at the interaction effect  of the first two features, and let’s say there are, in total, 4  features. Since the formula is recursive in the sense that to compute higher order interactions, you have to also compute all lower-order interactions, we start with the lowest order, namely the $f_0$ component which is a  constant. For $f_0$, the subset $S=\{\emptyset\}$ and therefore -S contains  all features $X_S$. Therefore we get:
 $$
-f_S(x) = \int_{X} f(x) d X)
+f_S(x) = \int_{X} f(x) d X
 $$
 
 
@@ -129,7 +128,7 @@ The formula for $f_2(x)$ is equivalent.
 
 The the $V\subset{}S$ are ${1,2}$ and the formula becomes:
 $$
-f_{1,2}(x) = \int{\{3,4\}} \left( f(x) - (f_0(x) + f_1(x) + f_2(x))\right) d X_{3},X_4
+f_{1,2}(x) = \int{_{\{3,4\}}} \left( f(x) - (f_0(x) + f_1(x) + f_2(x))\right) d X_{3},X_4
 $$
 This example shows how **each higher order effect is defined by  integrating over all other features, but also be removing all the  lower-order effects that are subsets of the higher-order effects**.
 
