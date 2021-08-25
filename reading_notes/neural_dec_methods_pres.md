@@ -347,6 +347,7 @@ Proposed approach:
 <span style="font-size:17px;">
  
 * not sure about the functional/variance decomposition: if 3 variables, how will the interaction terms look like ?
+* not sure how to "feed" the decoder (decoder_z1 will receive only input from 1 layer?)
 * could we do functional/variance decomposition and ignore some (high-order interaction) terms ? (cf. christophm.github)
 * how integrals are calculated: 
   * not understood how does the grid story work...
@@ -361,6 +362,111 @@ some thoughts:
 * "Bayesian Functional ANOVA Modeling Using Gaussian Process Prior Distributions" by Kaufman and Sain (2010)
   * how about combining a Bayesian way knowledge injection with variance decomposition for neural networks ?
 * forget about neural decomposition and find other ways to get feature-level interpretability...
+</span>
+
+
+---
+
+### Appendix: ND with 2 LDs 1/4
+
+<span style="font-size:17px;">
+
+synthetic experiment generated from a two-dimensional latent space ($z1$, $z2$): 2 batches where each feature is either
+- unperturbed,
+- differs by a constant by batch or
+-  varies with $z1$ by batch.
+
+The goal was to identify if any tested VAE variant was capable of achieving batch correction (here $c=batch$) by identifying a latent space in which the 2 batches overlapped each other.
+
+![width:600px center](images/maertens_2lds_fig10.png)
+
+*ND-CVAE recovers a batch-adjusted two-dimensional z on a synthetic example whereas other approaches (VAE, CVAE, and linear-CVAE) struggle to appropriately adjust for known c.*
+
+$\rightarrow$ the standard CVAE did not entirely remove the batch effect in the latent space 
+$\rightarrow$ the sparse ND structure within the ND-CVAE has correctly identified a $(z1, z2)$ space in which the batches are now intermixed and the nonlinear batch effects removed
+
+</span>
+
+---
+
+### Appendix: ND with 2 LDs 2/4
+
+<span style="font-size:17px;">
+
+
+
+ ND-CVAE lets characterise how features vary with latent $z1$, $z2$ and known $c$ 
+ 
+![width:600px center](images/maertens_2lds_fig11.png)
+
+*On the synthetic batch-correction example, we characterised the decomposition learned by ND for every gene as a function of $z1$, $z2$, batch $c$, and interactions between them.*
+
+</span>
+
+---
+
+### Appendix: ND with 2 LDs 3/4
+
+    # define encoder which maps (data, covariate) -> (z_mu, z_sigma)
+    encoder_mapping = nn.Sequential(
+        nn.Linear(data_dim + n_covariates, hidden_dim),
+        nn.ReLU(),
+        nn.Linear(hidden_dim, 2)
+    )
+
+    encoder = cEncoder(z_dim=1, mapping=encoder_mapping)
+
+    decoder_z = nn.Sequential(
+        nn.Linear(1, hidden_dim),
+        nn.Tanh(),
+        nn.Linear(hidden_dim, data_dim)
+    )
+
+    decoder_c = nn.Sequential(
+        nn.Linear(1, hidden_dim),
+        nn.Tanh(),
+        nn.Linear(hidden_dim, data_dim)
+    )
+
+    decoder_cz = nn.Sequential(
+        nn.Linear(2, hidden_dim),
+        nn.Tanh(),
+        nn.Linear(hidden_dim, data_dim)
+    )
+
+    decoder = Decoder(data_dim, 
+                      grid_z, grid_c, grid_cz, 
+                      decoder_z, decoder_c, decoder_cz,
+                      has_feature_level_sparsity=True, p1=0.1, p2=0.1, p3=0.1, 
+                      lambda0=1e2, penalty_type="MDMM",
+                      device=device)
+
+    decoder = Decoder(data_dim, 
+                    grid_z1=grid_z1, grid_z2=grid_z2, grid_c=grid_c, 
+                    grid_cz1=grid_cz1, grid_cz2=grid_cz2, grid_z1z2=grid_z1z2,
+                    mapping_z1=decoder_z1,  mapping_z2=decoder_z2, mapping_c=decoder_c,
+                    mapping_cz1=decoder_cz1, mapping_cz2=decoder_cz2, 
+                    mapping_z1z2=decoder_z1z2,
+                      has_feature_level_sparsity=True, 
+                      p1=0.1, p2=0.1, p3=0.1, p4=0.1,
+                      p5=0.1, p6=0.1, p7=0.1, 
+                      lambda0=1e2, penalty_type="MDMM",
+                      device=device)
+
+    # Combine the encoder + decoder and fit the decomposable CVAE
+    model = CVAE(encoder, decoder, lr=5e-3, device=device)
+                      
+
+---
+
+### Appendix: ND with 2 LDs 4/4
+
+  ![width:650px center](images/ND_mapping_modif.png)
+
+      RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x64 and 1x32)
+
+<span style="font-size:17px;">
+(transition between encoder and decoder ???)
 </span>
 
 ---

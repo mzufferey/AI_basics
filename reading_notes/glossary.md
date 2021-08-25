@@ -90,6 +90,29 @@ The **Lagrangian dual problem**
 
 (Bishop, p. 703)
 
+
+
+## Genetic programming
+
+In artificial intelligence, genetic programming (GP) is a technique of evolving programs, starting from a population of unfit (usually random) programs, fit for a particular task by applying operations analogous to natural genetic processes to the population of programs. It is essentially a heuristic search technique often described as 'hill climbing', i.e. searching for an optimal or at least suitable program among the space of all programs. 
+
+([Wikipedia](https://en.wikipedia.org/wiki/Genetic_programming))
+
+## Koopman operator theory
+
+Nonlinear fluid flows represent some of the most complex nonlinear systems in the nature and the industry. This complexity is in part due to the nonlinearity of the governing equations and partly because of the high -and possibly infinite- number of dimensions required to model the fluid continuum. As a result, most of the quantitative prediction and analysis done today relies on extensive numerical simulations and experiments. Unfortunately, the classic toolbox of dynamical systems theory, which relies heavily on geometric viewpoint, is not easily applicable to outcome of these numerical and experimental efforts. An alternative approach introduced since the 90's is centered on the data-driven methods such Fourier analysis and Proper Orthogonal Decomposition (POD). These methods, despite having partial success with the problems of fluid mechanics, generally suffer from the disconnect with the underlying mathematical theory and thus fail to provide a reliable framework for analysis of flows with arbitrary complexities.
+
+The Koopman operator theory of dynamical systems provide a novel framework for data-driven analysis of nonlinear flows. In this theory, **the time evolution of observables is connected to the evolution of trajectories in the infinite dimensional state space of the flow, which in turn, enables us to represent the time-variation of each observable**, e.g. velocity at a given point, as a linear expansion of the Koopman operator invariants. This expansion, called **Koopman mode decomposition**, provides us with **a flow representation with two essential components**: 
+
+1. **Koopman modes** which are the **global structures** in the flow field that grow, decay or oscillate in time 
+2.  **Koopman eigenvalues** which correspond to the **time scales** of the growth, and oscillations of Koopman modes. 
+
+The lid-driven cavity flow provides a good example for the Koopman mode decomposition: The distribution of Koopman eigenvalues is a clear indicator of the asymptotic dynamics and the Koopman modes show the dominant structures that are present in a wide range of Reynolds numbers from the periodic flow at Re = 10,000 to the chaotic flow at Re = 30,000.
+
+([source](https://mgroup.me.ucsb.edu/koopman-operator-theory-and-fluid-mechanics))
+
+
+
 ## Lagrange multipliers
 
 - aka. undetermined multipliers
@@ -126,4 +149,26 @@ in calculus, point on the graph of the function where the function's derivative 
 - point where the function "stops" increasing or decreasing (hence the name)
 
 ([Wikipedia](https://en.wikipedia.org/wiki/Stationary_point))
+
+
+
+
+
+## Symbolic regression
+
+Symbolic regression searches the vast space of possible functional forms to arrive at a parsimonious description of the data. 
+
+([Martin et al. 2018](https://royalsocietypublishing.org/doi/full/10.1098/rspb.2018.0422))
+
+Symbolic regression is the task of identifying a mathematical expression that best fits a provided dataset of input and output values
+
+([Valipour et al. 2021](https://arxiv.org/abs/2106.14131))
+
+Symbolic Regression (SR) is a type of regression analysis that **searches the space of mathematical expressions to find the model that best fits a given dataset, both in terms of accuracy and simplicity**. No particular model is provided as a starting point to the algorithm. Instead, **initial expressions are formed by randomly combining mathematical building blocks** such as mathematical operators, analytic functions, constants, and state variables. Usually, a subset of these primitives will be specified by the person operating it, but that's not a requirement of the technique. The symbolic regression problem for mathematical functions has been tackled with a variety of methods, including recombining equations most commonly using genetic programming, as well as more recently methods utilizing Bayesian methods and physics inspired AI.
+
+([Wikipedia](https://en.wikipedia.org/wiki/Symbolic_regression))
+
+
+
+
 
