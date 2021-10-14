@@ -11,6 +11,8 @@
   - [why ML algorithms are hard to tune (engraved blog)](https://www.engraved.blog/why-machine-learning-algorithms-are-hard-to-tune): the issue when combining losses
   - [constrained optimization demystified (TDS)](https://towardsdatascience.com/constrained-optimization-demystified-with-implementation-in-python-235639546fa9) ([pdf](other_readings/constrained_optimization_demystified_tds.pdf))
   - [optimization with constraints using Lagrange multiplier in Python (TDS)](https://towardsdatascience.com/constrained-optimization-demystified-with-implementation-in-python-235639546fa9) ([pdf](other_readings/Optimization_with_constraints_lagrange_tds.pdf)) ([notebook](https://jooskorstanje.com/LagrangeMultiplier.html))
+- Bayesian statistics
+  - http://www.miketipping.com/index.htm; Mike Tipping personal web page; focus on sparse Bayesian learning and the "relevance vector machine"
 
 ### Articles of particular interest
 
@@ -20,7 +22,8 @@ optimization, Lagrange multipliers
 
 ### Books of particular interest
 
-- 
+- An Introduction to Bayesian Thinking
+  A Companion to the Statistics with R Course https://statswithr.github.io/book/
 
 ### Reading notes
 
@@ -33,6 +36,13 @@ optimization, Lagrange multipliers
 ### Other documents
 
 - <a href="reading_notes/glossary.md">glossary </a>
+
+
+### Python packages
+
+Graph networks
+Graph Nets open-source software library: github.com/deepmind/graph nets
+We have released an open-source library for building GNs in Tensorflow/Sonnet. It includes demos
 
 
 

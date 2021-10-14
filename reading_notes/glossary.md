@@ -1,4 +1,13 @@
+## Akaike information criterion (AIC) 
 
+Akaike information criterion (AIC) is an information-based model-selection criterion. 
+
+*  given by the formula −2 ×log likelihood + 2*k*, where *k* is the number of parameters.
+* favors simpler models by penalizing for the number of model parameters. 
+* does not, however, account for the sample size. 
+* as a result, the AIC penalization diminishes as the sample size increases, as does its ability to guard against overparameterization.
+
+https://www.stata.com/manuals/bayesglossary.pdf
 
 ## Augmented Lagrangian methods
 
@@ -8,6 +17,23 @@
 - different to penalty methods: they add yet another term, designed to mimic a Lagrange multiplier
 
 ([Wikipedia](https://en.wikipedia.org/wiki/Augmented_Lagrangian_method))
+
+
+
+## Automatic relevance determination (ARD)
+
+Automatic relevance determination (ARD) and the closely-related sparse Bayesian learning (SBL) framework are effective tools for pruning large numbers
+of irrelevant features leading to a sparse explanatory subset.
+
+[... in a generative model ] When large numbers of features are present relative to the signal dimension, the estimation problem is fundamentally
+ill-posed. Automatic relevance determination (ARD) addresses this problem by regularizing the solution space using a parameterized, data-dependent prior distribution that effectively prunes away redundant or superfluous features 
+
+
+
+[...] an automatic relevance determination (ARD) hyperparameter that determines the relevance of the *k*-th component of the input
+vectors [...]  for the prediction of the output. ARD therefore can be viewed as an in-built mechanism for feature selection. 
+
+
 
 ## Basic Differential Multiplier Method (BDMM)
 
@@ -43,6 +69,15 @@
         - trades the time to find the Pareto front with the time to converge to a solution on that front
         - but does not alter which solution is found, only how fast it is found
 
+## Bayesian information criterion (BIC)
+
+The Bayesian information criterion (BIC), also known as Schwarz criterion, is an information based criterion used for model selection in classical statistics.
+
+* given by the formula −0.5 ×log likelihood + *k* × ln*n*, where *k* is the number of parameters and *n* is the sample size.
+* favors simpler, in terms of complexity, models and it is more conservative than AIC.
+
+https://www.stata.com/manuals/bayesglossary.pdf
+
 ## Calculus of variation
 
 - problem to ﬁnd a value of $x$ that maximizes (or minimizes) a function $y(x)$
@@ -53,7 +88,21 @@
 
 (Bishop, p. 703)
 
+## Cardinality
 
+- size of a finite set
+
+([source](https://web.uvic.ca/~gmacgill/LFNotes/Cardinality.pdf))
+
+## Deviance information criterion (DIC)
+
+The deviance information criterion (DIC) is an information based criterion used for Bayesian model selection. 
+
+* analog of AIC 
+* given by the formula *D(θ) + 2 ×pD*, where *D(θ)*  is the deviance at the sample mean and *pD* is the effective complexity, a quantity equivalent to the number of parameters in the model. 
+* models with smaller DIC are preferred
+
+https://www.stata.com/manuals/bayesglossary.pdf
 
 ## Duality
 
@@ -122,6 +171,28 @@ see note on [Lagrange multipliers](lagrange_multiplier.md)
 
 (Bishop, p. 706)
 
+## Marginal posterior distribution
+
+In Bayesian context, a marginal posterior distribution is a distribution resulting from integrating out all but one parameter from the joint posterior distribution.
+
+https://www.stata.com/manuals/bayesglossary.pdf
+
+## MLE and OLS
+
+The MLE is concerned about choosing the parameter which can maximize the  likelihood or equivalently the log-likelihood function. And then fit the model based on the trial estimated parameter value and calculate the  mean of the model. To find the iterative weighted and working dependence and based on this two and the design matrix we can estimate the best  parameter value.The OLS will take the parameter value which minimize the error ( residuals) of the model. It will take into acount that the residual sum of square  and derivate with respect to the parameter regression coefficient (beta) and set it to zero and then we will find the parameter value which  minimize the error(residual sum of square).
+
+
+
+The ordinary least squares, or OLS is a method for approximately determining the unknown parameters located in a linear regression model. This method is obtained by minimizing the total of squared vertical distances between the observed responses within the dataset and the responses predicted by the linear approximation. Through a simple formula, you can express the resulting estimator, especially the single regressor, located on the right-hand side of the linear regression model. Also it is your overall solution in minimizing the sum of the squares of errors in your equation.
+
+The Maximum likelihood Estimation, or MLE, is a method used in estimating the parameters of a statistical model, and for fitting a statistical model to data. Using the maximum likelihood estimation, you can estimate the mean and variance of the height of your subjects. The MLE would set the mean and variance as parameters in determining the specific parametric values in a given model.
+
+
+
+> In a linear model, if the errors belong to a normal distribution the least squares estimators are also the maximum likelihood estimators.
+
+As explained above we're actually(more precisely equivalently) using the MLE for predicting *y* values. And if the response variable has arbitrary distributions rather than the normal distribution, like Bernoulli distribution or anyone from the [exponential family](https://en.wikipedia.org/wiki/Exponential_family) we map the linear predictor to the response variable distribution using a [link function](https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function)(according to the response distribution), then the likelihood function becomes the product of all the outcomes(probabilities between 0 and 1) after the  transformation. We can treat the link function in the linear regression  as the identity function(since the response is already a probability).
+
 ## Pareto front
 
 each point on the front represents a different trade-off between possibly conflicting objectives
@@ -133,6 +204,34 @@ each point on the front represents a different trade-off between possibly confli
 
 ([Navon et al. 2021](https://arxiv.org/pdf/2010.04104.pdf))
 
+
+
+## Precision
+
+in Bayesian statistics, the precision is the inverse of the variance (aka the reciprocal of the variance)
+
+$ϕ=1/σ^2 $
+
+less precision = more uncertainty
+
+
+
+## Predictive inference
+
+In Bayesian statistics, predictive inference is inference about unobserved (future) data conditionally on past data and prior knowledge of model parameters. Predictive inference is based on prior predictive or posterior predictive distribution of model parameters.
+
+https://www.stata.com/manuals/bayesglossary.pdf
+
+
+
+## Radial basis function
+
+A radial basis function (RBF) is a real-valued function $φ$ whose value depends only on the distance between the input and some fixed point, either the origin, so that $φ ( x ) = \hat{φ}( ‖ x ‖ ) $or some other fixed point $c$ called a center, so that $φ ( x ) = \hat{φ }(‖ x − c ‖ )$. Any function $φ$ that satisfies the property $φ ( x ) = \hat{φ} ( ‖ x ‖ )$is a radial function. The distance is usually Euclidean distance, although other metrics are sometimes used. They are often used as a collection $\{ φ_k \}_k$ which forms a basis for some function space of interest, hence the name. 
+
+([Wikipedia](https://en.wikipedia.org/wiki/Radial_basis_function))
+
+
+
 ## Saddle point
 
 point on the surface of the graph of a function where the slopes (derivatives) in orthogonal directions are all zero (a critical point), but which is not a local extremum of the function
@@ -141,6 +240,85 @@ point on the surface of the graph of a function where the slopes (derivatives) i
 - the name derives from the fact that the prototypical example in two dimensions is a surface that curves up in one direction, and curves down in a different direction
 
 ([Wikipedia](https://en.wikipedia.org/wiki/Saddle_point))
+
+
+
+## Shapley values
+
+A prediction can be explained by assuming that each feature value of the instance is a "player" in a game where the prediction is the payout. Shapley values – a method from coalitional game theory – tells us **how to fairly distribute the "payout" among the features**.
+
+How much has each feature value contributed to the prediction compared to the average prediction?
+
+A solution comes from cooperative game theory: the Shapley value, coined by Shapley (1953), is **a method for assigning payouts to players depending on their contribution to the total payout**. Players cooperate in a coalition and receive a certain profit from this cooperation.
+
+- the "game" = prediction task for a single instance of the dataset
+- the "gain" = the actual prediction for this instance minus the average prediction for all instances
+- the "players" = the feature values of the instance that collaborate to receive the gain (= predict a certain value)
+
+The Shapley value is **the average marginal contribution of a feature value across all possible coalitions** (in comparison, LIME suggests local models to estimate effects).
+
+The interpretation of the Shapley value for feature value $j$ is: the value of the $j$-th feature contributed $ϕ_j$ to the prediction of this particular instance compared to the average prediction for the dataset.
+
+The Shapley value works for both classification (if we are dealing with probabilities) and regression.
+
+Intuitive understanding: 
+
+- the feature values enter a room in random order
+- all feature values in the room participate in the game (= contribute to  the prediction)
+- the Shapley value of a feature value = the average change in the  prediction that the coalition already in the room receives when the  feature value joins them
+
+**Advantages**
+
+- the difference between the prediction and the average prediction is **fairly distributed** among the feature values of the instance (**efficiency** property of Shapley values)
+  - $\ne$ to LIME which does not guarantee that the prediction is fairly distributed among  the features
+  - Shapley value might be the only method to deliver a full  explanation; when the law requires explainability the Shapley value might be the only legally compliant method, because it is based on a solid theory and distributes the  effects fairly
+
+* allows **contrastive explanations**
+  * instead of comparing a prediction to the average prediction of the  entire dataset, you could compare it to a subset or even to a single  data point
+  *  something that local models like LIME do  not have
+
+* only explanation method with a **solid theory**
+  * methods like LIME assume linear behavior of the machine learning model  locally, but there is no theory as to why this should work
+
+**Disadvantages**
+
+* requires **a lot of computing time**
+  * because there are $2^k$ possible coalitions of the feature values and the "absence" of a  feature has to be simulated by drawing random instances, which increases the variance for the estimate of the Shapley values estimation
+  * the exponential number of the coalitions is dealt with by sampling  coalitions and limiting the number of iterations $M$
+  * decreasing $M$ reduces computation time, but increases the variance of the Shapley value
+  * no good rule of thumb for the number of iterations $M$
+    * should be large enough to accurately estimate the Shapley values, 
+    * but  small enough to complete the computation in a reasonable time
+  * in most real-world problems, only the approximate solution is feasible
+
+* can be **misinterpreted**: the Shapley value of a feature value **is <u>not</u> the difference of the  predicted value after removing the feature** from the model training. 
+  * rather: given the current set of feature values, **the contribution of a feature  value to the difference between the actual prediction and the mean  prediction** is the estimated Shapley value
+
+* not a method for sparse explanations (explanations that contain few features): explanations created with the Shapley value method **always use all the features**
+  * often we prefer selective explanations, such as those produced by LIME
+  * another solution is [SHAP](https://github.com/slundberg/shap), which is based on the Shapley value, but can also provide explanations with few features
+
+* the Shapley value returns a simple value per feature, but **no prediction model** ($\ne$ LIME)
+  * it cannot be used to make statements about changes in prediction for changes in the input
+* **access to the data needed** for calculating the Shapley value **for a new data instance**
+  * access to the prediction function is not sufficient because you need  the data to replace parts of the instance of interest with values from  randomly drawn instances of the data
+  * can only be avoided if you can create data instances that look like real data instances but are not actual instances from the training  data
+
+* like many other permutation-based interpretation methods, suffers from **inclusion of unrealistic data instances when features are correlated**
+  * to simulate that a feature value is missing from a coalition, we  marginalize the feature
+    * achieved by sampling values from the feature’s marginal  distribution
+    * fine as long as the features are independent
+    * when features are dependent, then we might sample feature values that do not make sense for this instance. But we would use those to compute the feature’s Shapley value
+  * one solution might be to permute correlated features together and get  one mutual Shapley value for them
+  * another adaptation is conditional sampling: features are sampled  conditional on the features that are already in the team
+    * fixes the issue of unrealistic data points
+    * but a new issue is introduced: the resulting values are no longer the Shapley values to our game, since they violate the symmetry axiom
+
+
+
+([Molnar 2021](https://christophm.github.io/interpretable-ml-book/shapley.html))
+
+
 
 ## Stationary point
 
