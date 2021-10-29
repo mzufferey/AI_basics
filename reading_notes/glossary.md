@@ -193,6 +193,39 @@ The Maximum likelihood Estimation, or MLE, is a method used in estimating the pa
 
 As explained above we're actually(more precisely equivalently) using the MLE for predicting *y* values. And if the response variable has arbitrary distributions rather than the normal distribution, like Bernoulli distribution or anyone from the [exponential family](https://en.wikipedia.org/wiki/Exponential_family) we map the linear predictor to the response variable distribution using a [link function](https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function)(according to the response distribution), then the likelihood function becomes the product of all the outcomes(probabilities between 0 and 1) after the  transformation. We can treat the link function in the linear regression  as the identity function(since the response is already a probability).
 
+
+
+### Optimization
+
+If there are no constraints on what values the decision variables can  take, we have an **unconstrained optimization problem**. This is a type of  problem encountered in linear regression. It is also called a **functional approximation** **problem** and is widely used in data science
+
+Depending on type of objective function, constraints and decision variables, <u>optimization can be of various types</u>.
+
+1. **Linear programming**: If the decision variable is continuous, the  functional form is linear and all constraints are also linear, it is  called a Linear programming problem.
+   * If the objective function and constraints are linear and decision variable is an integer, it is called a **Linear integer programming** problem.
+   * A special case might be decision variables can only take binary values (  0,1), then it is called a **Binary integer programming** problem.
+
+2. **Non linear programming**: If the decision variable remains continuous and  either the objective function or constraints are non linear, it is  called a non linear programming problem.
+   * If the objective function or constraints are non-linear and decision  variable is an integer, it is called a **Non-linear integer programming**  problem.
+
+**Mixed-integer linear programming** problem: If the decision variable(x) is a mixed  variable and if the objective function(f) is linear and all the  constraints are also linear then this type of problem known as a  mixed-integer linear programming problem. So, in this case, the decision variables are mixed, the objective function is linear and the  constraints are also linear.
+
+**Mixed-integer non-linear programming** problem: If the decision variable(x) remains  mixed; however, if either the objective function(f) or the constraints  are non-linear then this type of problem known as a mixed-integer  non-linear programming problem. So, a programming problem becomes  non-linear if either the objective or the constraints become non-linear.
+
+**nonlinear programming (NLP)** is the process of solving an optimization problem where some of the constraints or the objective function are nonlinear
+
+An **optimization problem** is one of calculation of the extrema (maxima, minima or stationary points) of an objective function over a set of unknown real variables and conditional to the satisfaction of a system of equalities and inequalities, collectively termed constraints. 
+
+If the objective function is concave (maximization problem), or convex (minimization problem) and the constraint set is convex, then the program is called convex and general methods from **convex optimization** can be used in most cases.
+
+If the objective function is quadratic and the constraints are linear, **quadratic programming** techniques are used.
+
+If the objective function is a ratio of a concave and a convex function (in the maximization case) and the constraints are convex, then the problem can be transformed to a convex optimization problem using **fractional programming** techniques. 
+
+By definition, all constraints that are not linear are **nonlinear**. Nonlinear expressions include relationships in which variables are squared, cubed, taken to powers other than one, or multiplied or divided by each other.  Models with nonlinear expressions are much more difficult to solve than linear models. 
+
+
+
 ## Pareto front
 
 each point on the front represents a different trade-off between possibly conflicting objectives
@@ -229,6 +262,14 @@ https://www.stata.com/manuals/bayesglossary.pdf
 A radial basis function (RBF) is a real-valued function $φ$ whose value depends only on the distance between the input and some fixed point, either the origin, so that $φ ( x ) = \hat{φ}( ‖ x ‖ ) $or some other fixed point $c$ called a center, so that $φ ( x ) = \hat{φ }(‖ x − c ‖ )$. Any function $φ$ that satisfies the property $φ ( x ) = \hat{φ} ( ‖ x ‖ )$is a radial function. The distance is usually Euclidean distance, although other metrics are sometimes used. They are often used as a collection $\{ φ_k \}_k$ which forms a basis for some function space of interest, hence the name. 
 
 ([Wikipedia](https://en.wikipedia.org/wiki/Radial_basis_function))
+
+## Relaxation
+
+In mathematical optimization and related fields, relaxation is a **modeling strategy**. A relaxation is an **approximation of a difficult problem by a nearby problem that is easier to solve**. A solution of the relaxed problem provides information about the original problem.
+
+For example, **a linear programming relaxation of an integer programming problem removes the integrality constraint and so allows non-integer rational solutions.** A Lagrangian relaxation of a complicated problem in combinatorial optimization penalizes violations of some constraints, allowing an easier relaxed problem to be solved. Relaxation techniques **complement or supplement branch and bound algorithms** of combinatorial optimization; linear programming and Lagrangian relaxations are used to obtain bounds in branch-and-bound algorithms for integer programming.[1]
+
+The modeling strategy of relaxation should not be confused with iterative methods of relaxation, such as successive over-relaxation (SOR); iterative methods of relaxation are used in solving problems in differential equations, linear least-squares, and linear programming.[2][3][4] However, iterative methods of relaxation have been used to solve Lagrangian relaxations.[5] 
 
 
 

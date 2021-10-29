@@ -44,5 +44,10 @@ Graph networks
 Graph Nets open-source software library: github.com/deepmind/graph nets
 We have released an open-source library for building GNs in Tensorflow/Sonnet. It includes demos
 
+### R packages
 
 
+
+[bnlearn](https://cran.r-project.org/web/packages/bnlearn/index.html): Bayesian Network Structure Learning, Parameter Learning and Inference
+
+see also https://www.bnlearn.com/ (2 books with R examples available)
